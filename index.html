@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disease Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .chat-container {
+      width: 400px;
+      height: 600px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background: #f9f9f9;
+    }
+
+    .message {
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 80%;
+      line-height: 1.4;
+      white-space: pre-line; /* keeps newlines */
+    }
+
+    .user {
+      background: #007bff;
+      color: white;
+      align-self: flex-end;
+    }
+
+    .bot {
+      background: #e9ecef;
+      color: #000;
+      align-self: flex-start;
+    }
+
+    /* Highlighted response styles */
+    .highlight {
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 5px;
+    }
+
+    .symptoms {
+      background: #ffe6e6;
+      border-left: 4px solid #ff4d4d;
+    }
+
+    .prevention {
+      background: #e6ffe6;
+      border-left: 4px solid #33cc33;
+    }
+
+    .advice {
+      background: #e6f0ff;
+      border-left: 4px solid #3366ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div id="chat-box" class="chat-box"></div>
+    <div class="input-area">
+      <input id="user-input" type="text" placeholder="Ask about disease...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const inputField = document.getElementById("user-input");
+      const message = inputField.value.trim();
+      if (!message) return;
+
+      appendMessage("user", message);
+      inputField.value = "";
+
+      try {
+        const response = await fetch("http://127.0.0.1:5000/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: message })
+        });
+
+        const data = await response.json();
+
+        // Decide category (symptoms, prevention, advice)
+        let cssClass = "highlight";
+        const lowerResp = data.response.toLowerCase();
+        if (lowerResp.includes("symptom")) cssClass += " symptoms";
+        else if (lowerResp.includes("prevention")) cssClass += " prevention";
+        else if (lowerResp.includes("advice")) cssClass += " advice";
+
+        appendMessage("bot", `<div class="${cssClass}">${data.response}</div>`, true);
+      } catch {
+        appendMessage("bot", "⚠️ Error connecting to backend.");
+      }
+    }
+
+    function appendMessage(sender, text, isHTML = false) {
+      const chatBox = document.getElementById("chat-box");
+      const messageDiv = document.createElement("div");
+      messageDiv.className = `message ${sender}`;
+      if (isHTML) {
+        messageDiv.innerHTML = text;
+      } else {
+        messageDiv.textContent = text;
+      }
+      chatBox.appendChild(messageDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>

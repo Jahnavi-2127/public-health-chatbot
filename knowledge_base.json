@@ -1,0 +1,57 @@
+{
+  "dengue": {
+    "symptoms": "High fever, severe headache, pain behind the eyes, joint and muscle pain, rash, mild bleeding (nose or gums).",
+    "prevention": "Avoid standing water, use mosquito nets, use repellents, wear long-sleeved clothes, ensure community vector control.",
+    "advice": "If you have high fever and severe pain, seek medical help. Stay hydrated and monitor warning signs."
+  },
+  "malaria": {
+    "symptoms": "Fever, chills, headache, muscle aches, malaise. Severe cases may cause anemia and organ failure.",
+    "prevention": "Use insecticide-treated bed nets, indoor residual spraying, remove stagnant water.",
+    "advice": "Get tested quickly and start antimalarial treatment as prescribed by a doctor."
+  },
+  "covid": {
+    "symptoms": "Fever, dry cough, tiredness. Some have loss of taste or smell, sore throat, headache, body aches.",
+    "prevention": "Vaccination, masks in crowded places, regular hand washing, isolation when symptomatic.",
+    "advice": "Test if symptomatic and follow local health guidance on isolation and treatment."
+  },
+  "flu": {
+    "symptoms": "Fever, cough, sore throat, runny nose, body aches.",
+    "prevention": "Get flu vaccination annually, wash hands frequently, avoid close contact with sick people.",
+    "advice": "Rest, drink plenty of fluids, and take paracetamol if needed. Seek medical help if severe."
+  },
+  "diabetes": {
+    "symptoms": "Frequent urination, increased thirst, weight loss, fatigue, blurred vision.",
+    "prevention": "Maintain a healthy weight, eat a balanced diet, exercise regularly, monitor blood sugar levels.",
+    "advice": "Consult a doctor for diagnosis and treatment. Follow prescribed diet, exercise, and medication."
+  },
+  "asthma": {
+    "symptoms": "Shortness of breath, chest tightness, wheezing, coughing at night or early morning.",
+    "prevention": "Avoid triggers like smoke, dust, pollen, and cold air. Follow preventive inhaler treatment if prescribed.",
+    "advice": "Use inhalers as directed. Seek medical help if breathing becomes very difficult or symptoms worsen."
+  },
+  "typhoid": {
+    "symptoms": "Prolonged fever, abdominal pain, headache, weakness, constipation or diarrhea.",
+    "prevention": "Drink clean water, practice good hand hygiene, avoid street food in unsafe areas.",
+    "advice": "Seek medical care for antibiotics. Stay hydrated and follow doctor’s advice."
+  },
+  "tuberculosis": {
+    "symptoms": "Persistent cough (more than 3 weeks), chest pain, coughing blood, weight loss, night sweats, fever.",
+    "prevention": "Early detection and treatment, vaccination (BCG), good ventilation in living spaces.",
+    "advice": "Consult a doctor immediately for diagnosis and complete the full course of TB medication."
+  },
+  "hypertension": {
+    "symptoms": "Often no clear symptoms. In some cases: headaches, dizziness, blurred vision, chest pain.",
+    "prevention": "Eat low-salt healthy diet, exercise regularly, avoid stress, maintain healthy weight.",
+    "advice": "Get blood pressure checked regularly. Follow doctor’s prescription and lifestyle advice."
+  },
+  "pneumonia": {
+    "symptoms": "Cough with phlegm, chest pain, fever, chills, difficulty breathing, fatigue.",
+    "prevention": "Vaccination, hand washing, avoid smoking, maintain good hygiene.",
+    "advice": "Seek medical attention for antibiotics or antivirals. Rest and drink fluids."
+  },
+  "chickenpox": {
+    "symptoms": "Itchy rash with red spots/blisters, fever, tiredness, loss of appetite, headache.",
+    "prevention": "Vaccination, avoid contact with infected people.",
+    "advice": "Stay isolated until blisters heal. Relieve itching with calamine lotion. Drink fluids and rest."
+  }
+}
